@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy New year</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+    <script src="share.js"></script>
+    <script src="music.js"></script>
+</head>
+
+<body>
+    <div class="title">돌파의 한 해 되시길 축복합니다 ✨</div>
+    <div id="postcard" class="rotate-0" onclick="flipImage()">
+        <img src="./postcard.jpeg" class="postcard-background" />
+        <div class="face">
+            <div id="msg-container">
+                <p class="p-message">주님과 함께하는 복된 한 해 되세요 💙</p>
+                <p class="p-name hidden">@holy_chariot</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="btn-containor">
+        <button class="btn-bgm" onclick="controlBgm()">BGM</button>
+        <button class="btn-share" onclick="shareMessage()">SHARE</button>
+        <button onclick="renewMessage()">REFRESH</button>
+    </div>
+
+    <audio loop id="audio-bgm">
+        <source src="./bgm.mp3" type="audio/mp3">
+    </audio>
+
+    <script>
+        var containor = document.querySelector('#postcard');
+
+        containor.addEventListener('mousemove', function (e) {
+            var rect = containor.getBoundingClientRect();
+            var x = e.clientX - rect.left;
+            var y = e.clientY - rect.top;
+            var rotateX = ((y / rect.height - 0.5) * -100).toFixed(2);
+            var rotateY = ((x / rect.width - 0.5) * 100).toFixed(2);
+            containor.style.transform = `perspective(600px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+
+        containor.addEventListener('mouseout', function () {
+            containor.style = `transform: perspective(350px) rotateX(0deg) rotateY(0deg)`;
+            containor.style.transition = 'transform 1s ease';
+        });
+    </script>
+
+
+</body>
+
+</html>

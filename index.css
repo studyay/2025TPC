@@ -1,0 +1,102 @@
+@font-face {
+    font-family: 'Ownglyph_ryurue-Rg';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405-2@1.0/Ownglyph_ryurue-Rg.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: 'Ownglyph_ryurue-Rg';
+}
+
+body {
+    background-image: url('./background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    background-blend-mode: darken;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.title {
+    color: #BBD6E9;
+    font-size: 30px;
+}
+
+#postcard {
+    width: 400px;
+    position: absolute;
+}
+
+.postcard-background {
+    width: 100%;
+    border-radius: 30px;
+}
+
+#msg-containor {
+    position: absolute;
+    width: 100%;
+    top: 0%;
+}
+
+p {
+    color: rgb(46, 65, 114);
+    padding: 50px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/*.p-message {
+    width: 70%;
+    margin-top: -220px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}*/
+.p-message {
+    width: 70%;
+    height: 200px; /* 고정 높이 설정 */
+    overflow: hidden; /* 넘치는 텍스트 숨김 */
+    margin-top: -220px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+
+.p-name {
+    font-size: 15px;
+    text-align: center;
+    margin-top: -200px;
+}
+
+#btn-containor {
+    width: 400px;
+    margin-top: 550px;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+button {
+    color: black;
+    background-color: #BBD6E9;
+    width: 22%;
+    padding: 10px;
+    margin: 5px;
+    margin-top: -100px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #EDD982;
+    color: black;
+}
